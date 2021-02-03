@@ -18,11 +18,16 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class Item implements Persistable<String> {
 
-    @Id @GeneratedValue
-    private Long id;
+    @Id
+    private String id;
 
     @CreatedDate
     private LocalDateTime createdDate;
+
+    @Override
+    public String getId() {
+        return id;
+    }
 
     @Override
     public boolean isNew() {
